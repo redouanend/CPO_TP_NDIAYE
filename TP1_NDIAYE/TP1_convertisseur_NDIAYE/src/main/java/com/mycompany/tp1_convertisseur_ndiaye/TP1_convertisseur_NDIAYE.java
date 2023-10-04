@@ -20,15 +20,45 @@ public class TP1_convertisseur_NDIAYE {
        System.out.println("Bonjour, veillez rentrer une  valeur.");
        double val1 = sc.nextDouble();
        System.out.println("\nVotre valeur est: " + val1);
+       double val2 = 0;
+       System.out.println("\n)Saisissez la conversion que vous souhaiter effectuer :\n" +
+                                "1) De Celcius vers Kelvin\n" +
+                                "2) De Kelvin vers Celcius\n" +
+                                "3)FarenheitVersCelcius\n" +
+                                "4)CelciusVersFarenheit\n" +
+                                "5)KelvinVersFarenheit\n" +
+                                "6) De Farenheit vers Kelvin");
+       int select = sc.nextInt();
+       if (select == 1) { val2 = CelciusVersKelvin(val2);}
+       if (select == 2) { val2 = KelvinVersCelcius(val2);}
+       if (select == 3) { val2 = FarenheitVersCelcius(val2);}
+       if (select == 4) { val2 = CelciusVersFarenheit(val2);}
+       if (select == 5) { val2 = KelvinVersFarenheit(val2);}
+       if (select == 6) { val2 = FarenheitVersKelvin(val2);}
+       System.out.println("\nLa temperature convertie est: " + val2);
+    }  
+    public static double CelciusVersKelvin (double val1) {
        double conv = 273.15 + val1;
-       System.out.println("\nLa temperature en Kelvin est: " + conv);
+       return conv;
     }
-   public static double CelciusVersKelvin (double tCelcius) {
-       double conv = 273.15 + val1;
-       System.out.println("\nLa temperature en Kelvin est: " + conv);
-    }
-    public static double KelvinVersCelcius (double tCelcius) {
+    public static double KelvinVersCelcius (double val1) {
        double conv = -273.15 + val1;
-       System.out.println("\nLa temperature en Celcius est: " + conv);
+       return conv;   
+    }
+    public static double FarenheitVersCelcius (double val1) {
+       double conv = (val1 - 32) * 5/9;
+       return conv;
+    }
+    public static double CelciusVersFarenheit (double val1) {
+       double conv = (val1 * 9 / 5) + 32;
+       return conv;
+    }
+    public static double KelvinVersFarenheit (double val1) {
+       double conv = (val1 - 273.15) * 9/5 + 32;
+       return conv;   
+    }  
+    public static double FarenheitVersKelvin (double val1) {
+       double conv = 5/ 9 * (val1 - 32) + 273.15 ;
+       return conv;
     }
 }
