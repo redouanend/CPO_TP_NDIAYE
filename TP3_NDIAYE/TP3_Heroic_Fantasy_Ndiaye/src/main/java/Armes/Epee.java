@@ -3,20 +3,21 @@
  *TP0
  * Septembre 2023
  */
-package com.mycompany.tp3_heroic_fantasy_ndiaye;
+package Armes;
+import Armes.Arme;
 import java.util.Scanner;
 
 /**
  *
  * @author redou
  */
-public class Baton extends Arme{
-    int age;
+public class Epee extends Arme{
+    int indice;
 
-    public Baton(String nom,int nvAttaque,int age) {
+    public Epee(String nom,int nvAttaque,int indice) {
         super(nom,nvAttaque);
-        if (age < 100){
-        this.age = age;
+        if (indice < 100){
+        this.indice = indice;
         }
         else{
         System.out.println("Erreur veuillez entrer un nombre inférieur à 100");
