@@ -12,8 +12,10 @@ import Personnage.Personnage;
  */
 public class Guerrier extends Personnage{
     boolean cheval;
+    static int nb_guerriers = 0;
     public Guerrier(String nom, int nvVie,Arme Aenmain, boolean cheval) {
         super(nom, nvVie,Aenmain);
+        nb_guerriers++;
     }
 
     public void setCheval(boolean cheval) {

@@ -13,13 +13,15 @@ import Personnage.Personnage;
  */
 public class Magicien extends Personnage {
     boolean Conf;
+    String niveau;
+    static int nb_magiciens = 0;
+
 
     public void setConf(boolean Conf) {
         this.Conf = Conf;
     }
     public Magicien(String nom, int nvVie,Arme Aenmain, boolean Conf) {
         super(nom, nvVie,Aenmain);
-        
+        nb_magiciens++;
     }
-    
 }

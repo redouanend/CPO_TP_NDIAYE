@@ -33,10 +33,10 @@ public class TP3_Heroic_Fantasy_Ndiaye {
         lst_armes.size();
         System.out.println(lst_armes);
         
-        Magicien Gandalf = new Magicien("Gandalf",65,true);
-        Magicien Garcimore = new Magicien("Garcimore",44,false);
-        Guerrier Conan = new Guerrier("Conan",78,false);
-        Guerrier Lannister = new Guerrier("Lannister",45,true);
+        Magicien Gandalf = new Magicien("Gandalf",65,null,true);
+        Magicien Garcimore = new Magicien("Garcimore",44,null,false);
+        Guerrier Conan = new Guerrier("Conan",78,null,false);
+        Guerrier Lannister = new Guerrier("Lannister",45,null,true);
         ArrayList<Personnage> lst_personnages = new ArrayList<Personnage>();
         lst_personnages.add(Gandalf);
         lst_personnages.add(Garcimore);

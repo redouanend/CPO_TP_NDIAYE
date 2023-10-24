@@ -12,8 +12,7 @@ import java.util.Scanner;
  * @author redou
  */
 public class Epee extends Arme{
-    int indice;
-
+    public int indice;
     public Epee(String nom,int nvAttaque,int indice) {
         super(nom,nvAttaque);
         if (indice < 100){
