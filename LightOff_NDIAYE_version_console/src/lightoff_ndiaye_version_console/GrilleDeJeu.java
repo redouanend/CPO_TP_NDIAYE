@@ -130,6 +130,6 @@ public class GrilleDeJeu {
                 b += this.matriceCellules[i][j]+" | ";
             }
         }
-        return "   | "+a+b;
+        return "   | "+a+b+"\n"+c;
     }
 }

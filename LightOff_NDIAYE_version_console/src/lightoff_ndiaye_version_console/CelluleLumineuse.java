@@ -37,13 +37,24 @@ public class CelluleLumineuse {
     }
     public boolean getEtat(){
         if (etat = true){
-            System.out.println("X");
             return true;
         }
         else {
-            System.out.println("0");
             return false;
         }
     }
+
+    @Override
+    public String toString() {
+        String x;
+         if (etat = true){
+            x = "X";
+        }
+        else {
+            x = "O";
+        }
+        return x ;
+    }
+    
 }
 
