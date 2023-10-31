@@ -17,6 +17,7 @@ public class LightOff_NDIAYE_version_console {
      */
     
     public static void main(String[] args) {
+        System.out.println("Bienvenue dans le Jeu");
         GrilleDeJeu grille = new GrilleDeJeu();
         Partie partie = new Partie(grille);
         partie.initialiserPartie();
