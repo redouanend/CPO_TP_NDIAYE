@@ -9,6 +9,7 @@ package lightoff_ndiaye_version_console;
  * @author redou
  */
 import java.util.Random;
+import java.util.Scanner;
 
 public class GrilleDeJeu {
 
@@ -16,9 +17,12 @@ public class GrilleDeJeu {
     int nbLignes;
     int nbColonnes;
 
-    public GrilleDeJeu(int p_nbLignes, int p_nbColonnes) {
-        this.nbLignes = p_nbLignes;
-        this.nbColonnes = p_nbColonnes;
+    public GrilleDeJeu() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("De quel taille voulez-vous votre grille?");
+        int y = sc.nextInt();
+        this.nbLignes = y;
+        this.nbColonnes = y;
         matriceCellules = new CelluleLumineuse[nbLignes][nbColonnes];
         for (int i = 0; i < nbLignes; i++) {
             for (int j = 0; j < nbColonnes; j++) {
@@ -26,7 +30,6 @@ public class GrilleDeJeu {
             }
         }
     }
-
     public CelluleLumineuse[][] eteindreToutesLesCellules() {
         for (int i = 0; i < nbLignes; i++) {
             for (int j = 0; j < nbColonnes; j++) {

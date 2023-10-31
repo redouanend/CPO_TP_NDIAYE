@@ -4,6 +4,8 @@
  */
 package lightoff_ndiaye_version_console;
 
+import java.util.Scanner;
+
 /**
  *
  * @author redou
@@ -15,7 +17,7 @@ public class LightOff_NDIAYE_version_console {
      */
     
     public static void main(String[] args) {
-        GrilleDeJeu grille = new GrilleDeJeu(4,4);
+        GrilleDeJeu grille = new GrilleDeJeu();
         Partie partie = new Partie(grille);
         partie.initialiserPartie();
         int x = partie.TypeDiff();
