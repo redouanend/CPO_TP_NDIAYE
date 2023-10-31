@@ -15,72 +15,10 @@ public class LightOff_NDIAYE_version_console {
      */
     
     public static void main(String[] args) {
-        // test CelluleLumineuse
-        CelluleLumineuse c = new CelluleLumineuse();
-        System.out.println("état de la cellule c :"+c.getEtat());
-        c.activerCellule();
-        System.out.println("état de la cellule c :"+c.getEtat());
-        System.out.println("cellule éteinte ? "+c.estEteint());
-        c.eteindreCellule();
-        System.out.println("cellule éteinte après methode eteindre ? "+c.estEteint()+"\n");
-        // Cellule lumineuse fonctionne correctement 
-        
-        
-        //test grille de jeu
         GrilleDeJeu grille = new GrilleDeJeu(4,4);
-        System.out.print(grille);
-        //to string fonctionne bien 
-        
-        System.out.println("cellules toutes éteintes ? "+grille.cellulesToutesEteintes());
-        //test fonctionnel de cellulesToutesEteintes().
-        
-        grille.activerLigneDeCellules(0);
-        System.out.println(grille);
-        //test fonctionnel de activerLigneDeCellules().
-        
-        grille.activerColonneDeCellules(0);
-        System.out.println(grille);
-        //test fonctionnel de activerColonneDeCellules().
-        
-        grille.activerDiagonaleDescendante();
-        System.out.println(grille);
-        //test fonctionnel de activerDiagonaleDescendante(). 
-        
-        grille.activerDiagonaleMontante();
-        System.out.println(grille);
-        //test fonctionnel de activerDiagonaleMontante();
-        
-        grille.eteindreToutesLesCellules();
-        System.out.println(grille);
-        //test fonctionnel de eteindreToutesLesCellules()
-        
-        grille.melangerMatriceAleatoirement(5);
-        System.out.println(grille);
-        //test fonctionnel de melangerMatriceAleatoirement(5).
-        
-        System.out.println("cellules toutes éteintes ? "+grille.cellulesToutesEteintes());
-        
-        grille.eteindreToutesLesCellules();
-        System.out.println("cellules toutes éteintes ? "+grille.cellulesToutesEteintes());
-        //La classe Grille de jeu fonctionne correctement. 
-        
-        
-        //test de la classe Partie : 
         Partie partie = new Partie(grille);
-        System.out.print(grille);
-        // constructeur fonctionne 
-        
-        partie.initialiserPartie();
-        System.out.println(grille);
-        // initialisation fonctionne bien 
-        
+        partie.initialiserPartie(10);
         partie.lancerPartie();
-        //System.out.print(partie.lancerPartie());
-/*
-        GrilleDeJeu grille = new GrilleDeJeu(4,4);
-        Partie partie = new Partie(grille);
-        partie.initialiserPartie();
-        partie.lancerPartie();*/
 
     }
     
