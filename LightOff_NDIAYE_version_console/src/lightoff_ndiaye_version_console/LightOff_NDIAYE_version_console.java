@@ -17,8 +17,9 @@ public class LightOff_NDIAYE_version_console {
     public static void main(String[] args) {
         GrilleDeJeu grille = new GrilleDeJeu(4,4);
         Partie partie = new Partie(grille);
-        partie.initialiserPartie(10);
-        partie.lancerPartie();
+        partie.initialiserPartie();
+        int x = partie.TypeDiff();
+        partie.lancerPartie(x);
 
     }
     

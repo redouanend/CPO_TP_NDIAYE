@@ -9,37 +9,40 @@ package lightoff_ndiaye_version_console;
  * @author redou
  */
 public class CelluleLumineuse {
-    private boolean etat;
+    private boolean etat = false;
 
     public CelluleLumineuse() {
         this.etat = false;
     }
-    public void activerCellule(){
-        if (etat = true){
+
+    public boolean activerCellule() {
+        if (etat == true) {
             etat = false;
-        }
-        if (etat = false){
+        } else if (etat == false) {
             etat = true;
         }
+        return etat;
     }
-    public void eteindreCellule(){
-        if ( etat = true){
+
+    public boolean eteindreCellule() {
+        if (etat == true) {
             etat = false;
         }
+        return etat;
     }
-    public boolean estEteint(){
-        if (etat = false){
+
+    public boolean estEteint() {
+        if (etat == false) {
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }
-    public boolean getEtat(){
-        if (etat = true){
+
+    public boolean getEtat() {
+        if (etat == true) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -47,14 +50,11 @@ public class CelluleLumineuse {
     @Override
     public String toString() {
         String x;
-         if (etat = true){
+        if (etat == false) {
+            x = "O";
+        } else {
             x = "X";
         }
-        else {
-            x = "O";
-        }
-        return x ;
+        return x;
     }
-    
 }
-

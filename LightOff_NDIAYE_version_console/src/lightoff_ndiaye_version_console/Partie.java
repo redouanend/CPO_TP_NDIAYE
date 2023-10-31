@@ -18,10 +18,52 @@ public class Partie {
     public Partie(GrilleDeJeu grille) {
         this.grille = grille;
     }
+    
+    public int TypeDiff(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Choisir le nombre de coups autorisé:\n"+ "1)Facile 15 coups\n" + "2)Moyen  11 coups\n" + "3)Difficile  7 coups\n");
+        int nv = sc.nextInt();
+        return nv;
+       }
+    
+    public void CoupsAuto(int nv){
+        if (nv == 1){
+            if (nbCoups > 15){
+                 System.out.println("Vous avez perdu le jeu.");
+                 System.exit(1);
+            }
+        }
+        if (nv == 2){
+            if (nbCoups > 11){
+                 System.out.println("Vous avez perdu le jeu.");
+                 System.exit(1);
+            }
+        }
+        if (nv == 3){
+            if (nbCoups > 7){
+                 System.out.println("Vous avez perdu le jeu.");
+                 System.exit(1);
+            }
+        }
+    }
+            
     public void initialiserPartie(){
+        Scanner sc = new Scanner(System.in);
+        int nbCoups = 0;
+        System.out.println("Niveau Mélange:\n"+ "1)Facile 5 mix\n" + "2)Moyen  8 mix\n" + "3)Difficile  10 mix\n");
+        int nv = sc.nextInt();
+        if (nv == 1){
+            nbCoups = 5;
+        }
+        if (nv == 2){
+          nbCoups = 8;
+        }
+        if (nv == 3){
+            nbCoups = 10;
+        }
         grille.melangerMatriceAleatoirement( nbCoups);
     }
-    public void lancerPartie(){
+    public void lancerPartie(int x){
         Scanner sc = new Scanner(System.in);
         System.out.println(grille);
         while(!grille.cellulesToutesEteintes()){
@@ -45,6 +87,7 @@ public class Partie {
                 grille.activerDiagonaleMontante();
             }
             System.out.println(grille);
+            CoupsAuto(x);
         }
         System.out.println("Felicitations vous avez gagné le jeu en "+nbCoups+" coups");
     }
