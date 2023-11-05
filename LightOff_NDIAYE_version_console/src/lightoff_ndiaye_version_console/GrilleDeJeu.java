@@ -43,13 +43,13 @@ public class GrilleDeJeu {
         Random rd = new Random();
         int n = rd.nextInt(3);
         if (n == 0) {
-            int x = rd.nextInt(nbLignes);
+            int x = rd.nextInt(nbLignes-1);
             for (int i = 0; i < nbColonnes; i++) {
                 matriceCellules[x][i].activerCellule();
             }
         }
         if (n == 1) {
-            int x = rd.nextInt(nbColonnes);
+            int x = rd.nextInt(nbColonnes-1);
             for (int i = 0; i < nbLignes; i++) {
                 matriceCellules[i][x].activerCellule();
             }
