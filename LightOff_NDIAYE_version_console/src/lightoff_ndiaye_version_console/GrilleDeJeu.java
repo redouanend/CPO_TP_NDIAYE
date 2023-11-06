@@ -89,8 +89,8 @@ public class GrilleDeJeu {
                     }
                 }
     public void activerDiagonaleMontante(){
-        for (int i = 0; i<nbLignes; i++){
-                    matriceCellules[i][(nbLignes-i)].activerCellule();
+        for (int i = 0; i<nbColonnes; i++){
+                    matriceCellules[nbColonnes-1-i][(i)].activerCellule();
                 }
     }
     public boolean cellulesToutesEteintes(){

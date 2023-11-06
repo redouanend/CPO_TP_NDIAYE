@@ -21,26 +21,26 @@ public class Partie {
     
     public int TypeDiff(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Choisir le nombre de coups autorisé:\n"+ "1)Facile 15 coups\n" + "2)Moyen  11 coups\n" + "3)Difficile  7 coups\n");
+        System.out.println("Choisir le nombre de coups autorisé:\n"+ "1)Facile 25 coups\n" + "2)Moyen  20 coups\n" + "3)Difficile  14 coups\n");
         int nv = sc.nextInt();
         return nv;
        }
     
     public void CoupsAuto(int nv){
         if (nv == 1){
-            if (nbCoups > 15){
+            if (nbCoups > 25){
                  System.out.println("Vous avez perdu le jeu.");
                  System.exit(1);
             }
         }
         if (nv == 2){
-            if (nbCoups > 11){
+            if (nbCoups > 20){
                  System.out.println("Vous avez perdu le jeu.");
                  System.exit(1);
             }
         }
         if (nv == 3){
-            if (nbCoups > 7){
+            if (nbCoups > 14){
                  System.out.println("Vous avez perdu le jeu.");
                  System.exit(1);
             }
