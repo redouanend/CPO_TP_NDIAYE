@@ -16,6 +16,7 @@ import javax.swing.JButton;
 public class FenetrePrincipale extends javax.swing.JFrame {
     GrilleDeJeu grille;
     int i;
+    int nbCoups;
     int nb ;
     /**
      * Creates new form FenetrePrincipale
@@ -34,7 +35,8 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     public void fin(){
         this.dispose();
     }
-    public FenetrePrincipale(int taille,int nbCoups) { 
+    public FenetrePrincipale(int taille) { 
+        int nbCoups = 15;
         initComponents();
         int nbLignes = taille;
         int nbColonnes = taille;
@@ -64,9 +66,14 @@ public class FenetrePrincipale extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 grille.activerLigneDeCellules(j);
                 nb++;
-
+ if (!grille.cellulesToutesEteintes()){
+                                if (nb == nbCoups){
+                    fin();
+                    new FenetreDefaite().setVisible(true);
+                }
                 finirPartie();
                 repaint();
+            }
             }
         };
         bouton_ligne.addActionListener(ecouteurClick);
@@ -87,8 +94,14 @@ public class FenetrePrincipale extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 grille.activerColonneDeCellules(j);
                 nb++;
+                if (!grille.cellulesToutesEteintes()){
+                                if (nb == nbCoups){
+                    fin();
+                    new FenetreDefaite().setVisible(true);
+                }
                 finirPartie();
                 repaint();
+            }
             }
         };
         bouton_colonne.addActionListener(ecouteurClick);
@@ -195,13 +208,28 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.grille.activerDiagonaleDescendante();
         nb++;
+        int nbCoups=15;
+                       if (!grille.cellulesToutesEteintes()){
+                                if (nb == nbCoups){
+                    fin();
+                    new FenetreDefaite().setVisible(true);
+                }
+                       }
         finirPartie();
         repaint();
+                       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.grille.activerDiagonaleMontante();
         nb++;
+        int nbCoups=15;
+                         if (!grille.cellulesToutesEteintes()){
+                                if (nb == nbCoups){
+                    fin();
+                    new FenetreDefaite().setVisible(true);
+                }
+                         }
         finirPartie();
         repaint();
     }//GEN-LAST:event_jButton2ActionPerformed
