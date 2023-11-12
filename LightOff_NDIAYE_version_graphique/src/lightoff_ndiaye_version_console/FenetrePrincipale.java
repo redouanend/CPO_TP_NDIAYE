@@ -16,6 +16,7 @@ import javax.swing.JButton;
 public class FenetrePrincipale extends javax.swing.JFrame {
     GrilleDeJeu grille;
     int i;
+    int cnt = 20;
     int nbCoups;
     int nb ;
     /**
@@ -65,6 +66,8 @@ public class FenetrePrincipale extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 grille.activerLigneDeCellules(j);
+                 cnt--;
+                jLabel1.setText("   "+cnt);
                 nb++;
  if (!grille.cellulesToutesEteintes()){
                                 if (nb == nbCoups){
@@ -94,6 +97,8 @@ public class FenetrePrincipale extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 grille.activerColonneDeCellules(j);
+                cnt--;
+                jLabel1.setText("   "+cnt);
                 nb++;
                 if (!grille.cellulesToutesEteintes()){
                                 if (nb == nbCoups){
@@ -110,7 +115,6 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         PanneauBoutonHorizontaux.add(bouton_colonne);
 
         }
-
     }
     
     /**
@@ -127,6 +131,8 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         PanneauBoutonVerticaux = new javax.swing.JPanel();
         PanneauBoutonHorizontaux = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("REDOUANE'S GAME");
@@ -203,11 +209,23 @@ public class FenetrePrincipale extends javax.swing.JFrame {
             });
             getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 90, 70));
 
+            jLabel1.setBackground(new java.awt.Color(204, 0, 51));
+            jLabel1.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
+            jLabel1.setForeground(new java.awt.Color(255, 0, 51));
+            jLabel1.setText("   20");
+            getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 40, 80, 60));
+
+            jLabel2.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
+            jLabel2.setText("Coups restants");
+            getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 20, -1, 20));
+
             pack();
         }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.grille.activerDiagonaleDescendante();
+         cnt--;
+                jLabel1.setText("   "+cnt);
         nb++;
         int nbCoups=20;
                        if (!grille.cellulesToutesEteintes()){
@@ -223,6 +241,8 @@ public class FenetrePrincipale extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.grille.activerDiagonaleMontante();
+         cnt--;
+                jLabel1.setText("   "+cnt);
         nb++;
         int nbCoups=20;
                          if (!grille.cellulesToutesEteintes()){
@@ -276,5 +296,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     private javax.swing.JPanel PanneauGrille;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
