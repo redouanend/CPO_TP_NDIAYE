@@ -23,7 +23,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
      */
     public void initialiserPartie() {
         grille.eteindreToutesLesCellules();
-        grille.melangerMatriceAleatoirement(15);
+        grille.melangerMatriceAleatoirement(20);
     }
     public void finirPartie(){
         if (grille.cellulesToutesEteintes()){
@@ -36,7 +36,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         this.dispose();
     }
     public FenetrePrincipale(int taille) { 
-        int nbCoups = 15;
+        int nbCoups = 20;
         initComponents();
         int nbLignes = taille;
         int nbColonnes = taille;
@@ -71,9 +71,10 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                     fin();
                     new FenetreDefaite().setVisible(true);
                 }
+ }
                 finirPartie();
                 repaint();
-            }
+            
             }
         };
         bouton_ligne.addActionListener(ecouteurClick);
@@ -99,9 +100,10 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                     fin();
                     new FenetreDefaite().setVisible(true);
                 }
+                }
                 finirPartie();
                 repaint();
-            }
+            
             }
         };
         bouton_colonne.addActionListener(ecouteurClick);
@@ -148,67 +150,66 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         );
 
         getContentPane().add(PanneauGrille, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 600, 600));
-        PanneauGrille.getAccessibleContext().setAccessibleName("");
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Descend");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 90, 70));
+        jButton1.setText("Descend \\");
+            jButton1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton1ActionPerformed(evt);
+                }
+            });
+            getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 90, 70));
 
-        PanneauBoutonVerticaux.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "LIGNES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 3, 12))); // NOI18N
+            PanneauBoutonVerticaux.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "LIGNES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 3, 12))); // NOI18N
 
-        javax.swing.GroupLayout PanneauBoutonVerticauxLayout = new javax.swing.GroupLayout(PanneauBoutonVerticaux);
-        PanneauBoutonVerticaux.setLayout(PanneauBoutonVerticauxLayout);
-        PanneauBoutonVerticauxLayout.setHorizontalGroup(
-            PanneauBoutonVerticauxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 170, Short.MAX_VALUE)
-        );
-        PanneauBoutonVerticauxLayout.setVerticalGroup(
-            PanneauBoutonVerticauxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 577, Short.MAX_VALUE)
-        );
+            javax.swing.GroupLayout PanneauBoutonVerticauxLayout = new javax.swing.GroupLayout(PanneauBoutonVerticaux);
+            PanneauBoutonVerticaux.setLayout(PanneauBoutonVerticauxLayout);
+            PanneauBoutonVerticauxLayout.setHorizontalGroup(
+                PanneauBoutonVerticauxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 170, Short.MAX_VALUE)
+            );
+            PanneauBoutonVerticauxLayout.setVerticalGroup(
+                PanneauBoutonVerticauxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 577, Short.MAX_VALUE)
+            );
 
-        getContentPane().add(PanneauBoutonVerticaux, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 180, 600));
+            getContentPane().add(PanneauBoutonVerticaux, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 180, 600));
 
-        PanneauBoutonHorizontaux.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "COLONNES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 3, 12))); // NOI18N
+            PanneauBoutonHorizontaux.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "COLONNES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 3, 12))); // NOI18N
 
-        javax.swing.GroupLayout PanneauBoutonHorizontauxLayout = new javax.swing.GroupLayout(PanneauBoutonHorizontaux);
-        PanneauBoutonHorizontaux.setLayout(PanneauBoutonHorizontauxLayout);
-        PanneauBoutonHorizontauxLayout.setHorizontalGroup(
-            PanneauBoutonHorizontauxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 590, Short.MAX_VALUE)
-        );
-        PanneauBoutonHorizontauxLayout.setVerticalGroup(
-            PanneauBoutonHorizontauxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 57, Short.MAX_VALUE)
-        );
+            javax.swing.GroupLayout PanneauBoutonHorizontauxLayout = new javax.swing.GroupLayout(PanneauBoutonHorizontaux);
+            PanneauBoutonHorizontaux.setLayout(PanneauBoutonHorizontauxLayout);
+            PanneauBoutonHorizontauxLayout.setHorizontalGroup(
+                PanneauBoutonHorizontauxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 590, Short.MAX_VALUE)
+            );
+            PanneauBoutonHorizontauxLayout.setVerticalGroup(
+                PanneauBoutonHorizontauxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 57, Short.MAX_VALUE)
+            );
 
-        getContentPane().add(PanneauBoutonHorizontaux, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 600, 80));
+            getContentPane().add(PanneauBoutonHorizontaux, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 600, 80));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Monte");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 90, 70));
+            jButton2.setBackground(new java.awt.Color(0, 0, 0));
+            jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+            jButton2.setForeground(new java.awt.Color(255, 255, 255));
+            jButton2.setText("Monte /");
+            jButton2.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton2ActionPerformed(evt);
+                }
+            });
+            getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 90, 70));
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+            pack();
+        }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.grille.activerDiagonaleDescendante();
         nb++;
-        int nbCoups=15;
+        int nbCoups=20;
                        if (!grille.cellulesToutesEteintes()){
                                 if (nb == nbCoups){
                     fin();
@@ -223,7 +224,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.grille.activerDiagonaleMontante();
         nb++;
-        int nbCoups=15;
+        int nbCoups=20;
                          if (!grille.cellulesToutesEteintes()){
                                 if (nb == nbCoups){
                     fin();
